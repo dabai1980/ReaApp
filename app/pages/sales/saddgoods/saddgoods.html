@@ -1,0 +1,31 @@
+<!--
+  Generated template for the SaddgoodsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>选择商品</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      商品列表
+    </ion-list-header >
+    <ion-item *ngFor="let item of goodsList">
+      <ion-label>{{item.name}}</ion-label>
+      <ion-checkbox dark value="{{item.value}}"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <button class="button button-full button-positive" (click)="goback()" >
+    确定
+  </button>
+</ion-footer>

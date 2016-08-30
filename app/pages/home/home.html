@@ -1,0 +1,206 @@
+<ion-header>
+  <ion-toolbar primary>
+    <ion-buttons start>
+      <ion-icon name="content"></ion-icon>
+    </ion-buttons>
+
+    <ion-title style="text-align: center">REA 财务</ion-title>
+
+    <ion-buttons end>
+      <ion-icon name="home"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding >
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="ssalehomePage">
+                <ion-icon name="ios-appstore"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;销&nbsp;售
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+      </ion-col>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="purchasehomePage">
+                <ion-icon name="ios-basket"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;采&nbsp;购
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="stockhomePage">
+                <ion-icon name="ios-archive"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;库&nbsp;存
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+
+      </ion-col>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="financehomePage">
+                <ion-icon name="logo-bitcoin"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;财&nbsp;务
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="productionhomePage">
+                <ion-icon name="ios-build"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;生&nbsp;产
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+      </ion-col>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="transportationhomePage">
+                <ion-icon name="ios-car-outline"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;运&nbsp;输
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="posthomePage">
+                <ion-icon name="ios-call-outline"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;售&nbsp;后
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+      </ion-col>
+      <ion-col width-50>
+        <!--开始-->
+        <div class="div-item">
+          <div class="div-b1">
+            <div>
+              <button fab [navPush]="dailyhomePage">
+                <ion-icon name="calendar"></ion-icon>
+              </button>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div clas="div-but-inf">
+              &nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;常
+            </div>
+          </div>
+
+        </div>
+        <!--END-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar secondary>
+    <ion-title>时间：{{time}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,81 @@
+<!--
+  Generated template for the ScustomermanagerPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title style="text-align: center">客户管理</ion-title>
+    <ion-buttons end>
+      <button royal (click)="routeOrderDetail()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-row>
+    <ion-col primary>
+      <ion-searchbar class="searchbar-active" (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item>
+        <ion-row>
+          <ion-col width-40>
+            客户名：
+          </ion-col>
+          <ion-col width-60>
+            {{item.name}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-40>
+            联系人：
+          </ion-col>
+          <ion-col width-60>
+            {{item.person}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-40>
+            联系电话：
+          </ion-col>
+          <ion-col width-60>
+            {{item.phone}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-40>
+            地址：
+          </ion-col>
+          <ion-col width-60>
+            {{item.address}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-40>
+            备注：
+          </ion-col>
+          <ion-col width-60>
+            {{item.remark}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options>
+        <button primary (click)="showPrompt(item)">
+          <ion-icon name="md-brush"></ion-icon>
+          编辑
+        </button>
+        <button danger (click)="showConfirm(item)">
+          <ion-icon name="md-close"></ion-icon>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

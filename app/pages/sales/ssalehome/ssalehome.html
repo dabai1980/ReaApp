@@ -1,0 +1,73 @@
+<!--
+  Generated template for the SsalehomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title class="align-title no-tap-scroll">销售</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color: #387ef5" >
+  <div >
+
+    <div class="list">
+      <ion-item style="background-color: #387ef5; color: white;">
+        <ion-avatar item-left>
+          <img src="img/fuwa.jpg"/>
+        </ion-avatar>
+        <h1>{{userID}}</h1>
+        <h2>{{postName}}</h2>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-icon name="ios-bookmarks" item-left></ion-icon>
+        <h1>销售申请</h1>
+        <button item-right (click)="pushPage('A')"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
+        <!--<ion-icon name="rose" item-right></ion-icon>-->
+      </ion-item>
+
+      <ion-item (click)="pushPage('B')">
+        <ion-icon name="ios-calculator" item-left></ion-icon>
+        <h1>订单管理</h1>
+        <ion-icon name="rose" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item (click)="pushPage('C')">
+        <ion-icon name="ios-car" item-left></ion-icon>
+        <h1>发货管理</h1>
+        <ion-icon name="rose" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item (click)="pushPage('D')">
+        <ion-icon name="ios-cog" item-left></ion-icon>
+        <h1>退货管理</h1>
+        <ion-icon name="rose" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item (click)="pushPage('E')">
+        <ion-icon name="logo-euro" item-left></ion-icon>
+        <h1>发票管理</h1>
+        <ion-icon name="rose" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item (click)="pushPage('F')">
+        <ion-icon name="ios-create" item-left></ion-icon>
+        <h1>价格管理</h1>
+        <ion-icon name="rose" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item (click)="pushPage('G')">
+        <ion-icon name="md-contacts" item-left></ion-icon>
+        <h1>客户管理</h1>
+        <ion-icon name="rose" item-right></ion-icon>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

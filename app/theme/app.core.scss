@@ -1,0 +1,95 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import "../pages/home/home";
+//销售
+@import "../pages/sales/saddcustomer/saddcustomer.scss";
+@import "../pages/sales/saddgoods/saddgoods.scss";
+@import "../pages/sales/sapplication/sapplication.scss";
+@import "../pages/sales/scustomeradd/scustomeradd.scss";
+@import "../pages/sales/scustomeredit/scustomeredit.scss";
+
+@import "../pages/sales/scustomermanager/scustomermanager.scss";
+@import "../pages/sales/sdeliveryinfo/sdeliveryinfo.scss";
+@import "../pages/sales/sdeliverymanager/sdeliverymanager.scss";
+@import "../pages/sales/sdeliverystream/sdeliverystream.scss";
+@import "../pages/sales/sinvoicemanager/sinvoicemanager.scss";
+
+@import "../pages/sales/sorderdetail/sorderdetail.scss";
+@import "../pages/sales/sordermanager/sordermanager.scss";
+@import "../pages/sales/spriceedit/spriceedit.scss";
+@import "../pages/sales/spricemanager/spricemanager.scss";
+@import "../pages/sales/sreturngoodadd/sreturngoodadd.scss";
+
+@import "../pages/sales/sreturngoodsmanager/sreturngoodsmanager.scss";
+@import "../pages/sales/ssalehome/ssalehome.scss";
+//采 购
+@import "../pages/purchase/inquiry/inquiry.scss";
+@import "../pages/purchase/inspection/inspection.scss";
+@import "../pages/purchase/invoices/invoices.scss";
+@import "../pages/purchase/orders/orders.scss";
+@import "../pages/purchase/purchasehome/purchasehome.scss";
+
+@import "../pages/purchase/requisition/requisition.scss";
+@import "../pages/purchase/return/return.scss";
+@import "../pages/purchase/warehousing/warehousing.scss";
+//库 存
+@import "../pages/stock/allocation/allocation.scss";
+@import "../pages/stock/check/check.scss";
+@import "../pages/stock/inspections/inspections.scss";
+@import "../pages/stock/stockhome/stockhome.scss";
+@import "../pages/stock/warehousings/warehousings.scss";
+//财 务
+@import "../pages/finance/aftersale/aftersale.scss";
+@import "../pages/finance/financehome/financehome.scss";
+@import "../pages/finance/financing/financing.scss";
+@import "../pages/finance/humanresources/humanresources.scss";
+@import "../pages/finance/investment/investment.scss";
+
+@import "../pages/finance/management/management.scss";
+@import "../pages/finance/material/material.scss";
+@import "../pages/finance/nonoperating/nonoperating.scss";
+@import "../pages/finance/production/production.scss";
+@import "../pages/finance/purcchase/purcchase.scss";
+
+@import "../pages/finance/receiptpayment/receiptpayment.scss";
+@import "../pages/finance/report/report.scss";
+
+//生 产
+@import "../pages/production/consume/consume.scss";
+@import "../pages/production/labor/labor.scss";
+@import "../pages/production/logs/logs.scss";
+@import "../pages/production/plan/plan.scss";
+@import "../pages/production/process/process.scss";
+
+@import "../pages/production/productionhome/productionhome.scss";
+@import "../pages/production/products/products.scss";
+@import "../pages/production/process/process.scss";
+//运 输
+@import "../pages/transportation/packinglist/packinglist.scss";
+@import "../pages/transportation/receivingnote/receivingnote.scss";
+@import "../pages/transportation/shippingnote/shippingnote.scss";
+@import "../pages/transportation/strike/strike.scss";
+@import "../pages/transportation/trail/trail.scss";
+
+@import "../pages/transportation/transportationhome/transportationhome.scss";
+
+//售 后
+@import "../pages/postsales/complaints/complaints.scss";
+@import "../pages/postsales/fuwu/fuwu.scss";
+@import "../pages/postsales/homeservice/homeservice.scss";
+@import "../pages/postsales/installation/installation.scss";
+@import "../pages/postsales/posthome/posthome.scss";
+//日常
+@import "../pages/daily/dailyhome/dailyhome.scss";
+@import "../pages/daily/economy/economy.scss";
+@import "../pages/daily/information/information.scss";
+@import "../pages/daily/management/management.scss";
+@import "../pages/daily/workflow/workflow.scss";
+

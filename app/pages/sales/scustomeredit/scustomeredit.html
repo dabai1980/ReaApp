@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ScustomereditPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title>添加客户</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>客户名称</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>联系人</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>联系方式</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>地址</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>备注</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar primary>
+    <ion-buttons left>
+      <button large (click)="routeCustomerManager()">
+        <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+        提交
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button large (click)="routeCustomerManager()">
+        <ion-icon name="md-close"></ion-icon>
+        取消
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

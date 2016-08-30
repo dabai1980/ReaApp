@@ -1,0 +1,486 @@
+<!--
+  Generated template for the FinancehomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>财务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+    <ion-segment [(ngModel)]="sales" [attr.light]="isAndroid ? '' : null">
+
+      <ion-segment-button value="1">
+        销售业务
+      </ion-segment-button>
+
+      <ion-segment-button value="2">
+        采购付款
+      </ion-segment-button>
+
+      <ion-segment-button value="3">
+        人力资源
+      </ion-segment-button>
+
+      <ion-segment-button value="4">
+        管理业务
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="sales">
+    <ion-list *ngSwitchCase="'1'">
+
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteAftersalePage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'2'">
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="rutePurcchasePage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'3'">
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteHumanresourcesPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-3.jpg">
+        </ion-thumbnail>
+        <h2>test</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'4'">
+
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteManagementPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>4test</h2>
+      </ion-item>
+      ...
+    </ion-list>
+  </div>
+
+  <div style="height:5px;width:100%;background-color: #8f8f8f"></div>
+
+  <ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+    <ion-segment [(ngModel)]="management" [attr.light]="isAndroid ? '' : null">
+
+      <ion-segment-button value="management1">
+        生产转换
+      </ion-segment-button>
+
+      <ion-segment-button value="management2">
+        其它收付
+      </ion-segment-button>
+
+      <ion-segment-button value="management3">
+        营业外业务
+      </ion-segment-button>
+
+      <ion-segment-button value="management4">
+        财务报表
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="management">
+    <ion-list *ngSwitchCase="'management1'">
+
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteProductionPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'management2'">
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteReceiptpaymentPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'management3'">
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteNonoperatingPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-3.jpg">
+        </ion-thumbnail>
+        <h2>test</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'management4'">
+
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteReportPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>4test</h2>
+      </ion-item>
+      ...
+    </ion-list>
+  </div>
+
+  <div style="height:5px;width:100%;background-color: #8f8f8f"></div>
+
+  <ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+    <ion-segment [(ngModel)]="financing" [attr.light]="isAndroid ? '' : null">
+
+      <ion-segment-button value="financing1">
+        生产转换
+      </ion-segment-button>
+
+      <ion-segment-button value="financing2">
+        实物管理
+      </ion-segment-button>
+
+      <ion-segment-button value="financing3">
+        筹资业务
+      </ion-segment-button>
+
+      <ion-segment-button value="financing4">
+        投资业务
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="financing">
+    <ion-list *ngSwitchCase="'financing1'">
+
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteProductionPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'financing2'">
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteMaterialPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'financing3'">
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteFinancingPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-3.jpg">
+        </ion-thumbnail>
+        <h2>test</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'financing4'">
+
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-add-circle-outline'></ion-icon>
+            <div (click)="ruteInvestmentPage()">添加</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+            <div>审核</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button primary clear small>
+            <ion-icon name='ios-more'></ion-icon>
+            <div>更多</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>4test</h2>
+      </ion-item>
+      ...
+    </ion-list>
+  </div>
+
+
+
+</ion-content>
