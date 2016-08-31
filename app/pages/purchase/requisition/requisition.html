@@ -19,7 +19,7 @@
     <ion-segment [(ngModel)]="pet" [attr.light]="isAndroid ? '' : null">
 
       <ion-segment-button value="1">
-        采购申请aa
+        采购申请
       </ion-segment-button>
 
       <ion-segment-button value="2">
@@ -118,8 +118,8 @@
       <ion-card-content>
         <ion-list>
           <ion-item>
-          <ion-label primary>申请说明</ion-label>
-          <ion-textarea></ion-textarea></ion-item>
+            <ion-label primary>申请说明</ion-label>
+            <ion-textarea></ion-textarea></ion-item>
         </ion-list>
       </ion-card-content>
       <ion-footer>
@@ -131,26 +131,26 @@
       <ion-card-content>
 
 
-          <ion-row>
-            <ion-col>
-              <button primary clear small>
-                <ion-icon name='ios-add-circle-outline'></ion-icon>
-                <div (click)="AddOrders()">添加</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button primary clear small>
-                <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
-                <div>审核</div>
-              </button>
-            </ion-col>
-            <ion-col center text-center>
-              <button primary clear small>
-                <ion-icon name='ios-more'></ion-icon>
-                <div>更多</div>
-              </button>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <button primary clear small>
+              <ion-icon name='ios-add-circle-outline'></ion-icon>
+              <div (click)="AddOrders()">添加</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button primary clear small>
+              <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+              <div>审核</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button primary clear small>
+              <ion-icon name='ios-more'></ion-icon>
+              <div>更多</div>
+            </button>
+          </ion-col>
+        </ion-row>
 
         <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
         <div class="divider-title">Recent</div>
