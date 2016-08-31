@@ -43,24 +43,24 @@
       <ion-card-content>
 
         <ion-row>
-          <ion-col>
+          <ion-col width-col-50 style="text-align: center">
             <button primary clear small>
               <ion-icon name='ios-add-circle-outline'></ion-icon>
               <div (click)="AddRequistion()">商品</div>
             </button>
           </ion-col>
-          <ion-col>
+          <ion-col width-col-50 style="text-align: center">
             <button primary clear small>
-              <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
-              <div (click)="AddRequisitionApprove()">审核</div>
+              <ion-icon name='ios-contact-outline'></ion-icon>
+              <div (click)="AddRequisitionApprove()">申请人</div>
             </button>
           </ion-col>
-          <ion-col center text-center>
+          <!--<ion-col center text-center>
             <button primary clear small>
               <ion-icon name='ios-more'></ion-icon>
               <div (click)="AddRequisitionApprove()">更多</div>
             </button>
-          </ion-col>
+          </ion-col>-->
         </ion-row>
         <ion-list>
 
@@ -78,91 +78,79 @@
           </ion-item>
         </ion-list>
 
+        <ion-row>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='ios-add-circle-outline'></ion-icon>
+              <div (click)="AddRequistion()">商品</div>
+            </button>
+          </ion-col>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='ios-contact-outline'></ion-icon>
+              <div (click)="AddRequisitionApprove()">申请人</div>
+            </button>
+          </ion-col>
+          <!--<ion-col center text-center>
+            <button primary clear small>
+              <ion-icon name='ios-more'></ion-icon>
+              <div (click)="AddRequisitionApprove()">更多</div>
+            </button>
+          </ion-col>-->
+        </ion-row>
 
       </ion-card-content>
+      <ion-footer>
+        <ion-toolbar>
+          <p style="font-size: 9px;">申请人：销售部 张三</p>
+          <p style="font-size: 9px;">合  计：24567.00元 共 2 件商品</p>
+          <ion-buttons end>
+            <button primary>
+              <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+              保存
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
     </ion-card>
-
-
-    <ion-row>
-      <ion-col>
-        <button primary clear small>
-          <ion-icon name='ios-add-circle-outline'></ion-icon>
-          <div (click)="AddRequistion()">商品</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button primary clear small>
-          <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
-          <div (click)="AddRequisitionApprove()">审核</div>
-        </button>
-      </ion-col>
-      <ion-col center text-center>
-        <button primary clear small>
-          <ion-icon name='ios-more'></ion-icon>
-          <div (click)="AddRequisitionApprove()">更多</div>
-        </button>
-      </ion-col>
-    </ion-row>
-
 
     <ion-card *ngSwitchCase="'2'">
       <ion-card-content>
         <ion-list>
-          <ion-row>
-            <ion-col>
-              <button primary clear small>
-                <ion-icon name='ios-add-circle-outline'></ion-icon>
-                <div (click)="AddInquiry()">添加</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button primary clear small>
-                <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
-                <div>审核</div>
-              </button>
-            </ion-col>
-            <ion-col center text-center>
-              <button primary clear small>
-                <ion-icon name='ios-more'></ion-icon>
-                <div>更多</div>
-              </button>
-            </ion-col>
-          </ion-row>
           <ion-item>
-            <ion-thumbnail item-left>
-              <img src="img/thumbnail-kitten-1.jpg">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
+            <ion-label primary>申请说明</ion-label>
+            <ion-textarea></ion-textarea></ion-item>
         </ion-list>
       </ion-card-content>
+      <ion-footer>
+        <ion-toolbar>bbbbbbbbbbbbbbbbbbbbbbb</ion-toolbar>
+      </ion-footer>
     </ion-card>
 
     <ion-card *ngSwitchCase="'3'">
       <ion-card-content>
 
 
-          <ion-row>
-            <ion-col>
-              <button primary clear small>
-                <ion-icon name='ios-add-circle-outline'></ion-icon>
-                <div (click)="AddOrders()">添加</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button primary clear small>
-                <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
-                <div>审核</div>
-              </button>
-            </ion-col>
-            <ion-col center text-center>
-              <button primary clear small>
-                <ion-icon name='ios-more'></ion-icon>
-                <div>更多</div>
-              </button>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <button primary clear small>
+              <ion-icon name='ios-add-circle-outline'></ion-icon>
+              <div (click)="AddOrders()">添加</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button primary clear small>
+              <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+              <div>审核</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button primary clear small>
+              <ion-icon name='ios-more'></ion-icon>
+              <div>更多</div>
+            </button>
+          </ion-col>
+        </ion-row>
 
         <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
         <div class="divider-title">Recent</div>
@@ -375,7 +363,7 @@
     </ion-card>
   </div>
 
-  <div style="height:5px;width:100%;background-color: #8f8f8f"></div>
+  <!--<div style="height:5px;width:100%;background-color: #8f8f8f"></div>-->
 
 
 </ion-content>
