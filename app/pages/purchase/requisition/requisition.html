@@ -52,7 +52,7 @@
           <ion-col width-col-50 style="text-align: center">
             <button primary clear small>
               <ion-icon name='ios-contact-outline'></ion-icon>
-              <div (click)="AddRequisitionApprove()">申请人</div>
+              <div (click)="showEmployeeRadio()">申请人</div>
             </button>
           </ion-col>
           <!--<ion-col center text-center>
@@ -88,7 +88,7 @@
           <ion-col width-col-50 style="text-align: center">
             <button primary clear small>
               <ion-icon name='ios-contact-outline'></ion-icon>
-              <div (click)="AddRequisitionApprove()">申请人</div>
+              <div (click)="showEmployeeRadio()">申请人</div>
             </button>
           </ion-col>
           <!--<ion-col center text-center>
@@ -102,7 +102,7 @@
       </ion-card-content>
       <ion-footer>
         <ion-toolbar>
-          <p style="font-size: 9px;">申请人：销售部 张三</p>
+          <p style="font-size: 9px;">申请人：{{sqr}}</p>
           <p style="font-size: 9px;">合  计：24567.00元 共 2 件商品</p>
           <ion-buttons end>
             <button primary>
