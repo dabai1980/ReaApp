@@ -4,6 +4,7 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<!--
 <ion-header>
 
   <ion-navbar primary>
@@ -49,7 +50,6 @@
     </ion-row>
   </ion-grid>
 </ion-header>
-
 <ion-content padding style="background-color: #387ef5">
   <ion-card>
     <ion-card-header>
@@ -67,4 +67,427 @@
       </ion-item>
     </ion-list>
   </ion-card>
+</ion-content>
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>销售申请</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+    <ion-segment [(ngModel)]="pet" [attr.light]="isAndroid ? '' : null">
+
+      <ion-segment-button value="1">
+        基本信息
+      </ion-segment-button>
+
+      <ion-segment-button value="2">
+        添加商品
+      </ion-segment-button>
+
+      <ion-segment-button value="3">
+        申请审批
+      </ion-segment-button>
+
+      <ion-segment-button value="4">
+        申请状态
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="pet">
+
+    <ion-card *ngSwitchCase="'1'">
+      <ion-card-content>
+        <ion-row>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='md-contacts'></ion-icon>
+              <div (click)="AddCustomer()">客户</div>
+            </button>
+          </ion-col>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='ios-contact-outline'></ion-icon>
+              <div (click)="showEmployeeRadio()">申请人</div>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-list>
+          <ion-item>
+            <ion-row>
+              <ion-col width-33>
+                订单号：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.dingdanhao}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row>
+              <ion-col width-33>
+                客户名称：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.kehu}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row>
+              <ion-col width-33>
+                联系人：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.zhiwei + dingdan.lianxiren}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row>
+              <ion-col width-33>
+                联系电话：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.lianxidianhua}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row>
+              <ion-col width-33>
+                客户名称：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.kehu}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row>
+              <ion-col width-33>
+                下单时间：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.xiadantime}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+
+        <ion-row>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='md-contacts'></ion-icon>
+              <div (click)="AddRequistion()">客户</div>
+            </button>
+          </ion-col>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='ios-contact-outline'></ion-icon>
+              <div (click)="showEmployeeRadio()">申请人</div>
+            </button>
+          </ion-col>
+          <!--<ion-col center text-center>
+            <button primary clear small>
+              <ion-icon name='ios-more'></ion-icon>
+              <div (click)="AddRequisitionApprove()">更多</div>
+            </button>
+          </ion-col>-->
+        </ion-row>
+
+      </ion-card-content>
+      <ion-footer>
+        <ion-toolbar>
+          <p style="font-size: 9px;">申请人：{{sqr}}</p>
+          <p style="font-size: 9px;">合 计：24567.00元 共 2 件商品</p>
+          <ion-buttons end>
+            <button primary>
+              <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+              保存
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'2'">
+      <ion-card-content>
+        <ion-list *ngFor="let item of dingdan.shangpinList">
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="{{item.imgurl}}">
+            </ion-thumbnail>
+            <h2>{{item.name}}</h2>
+            <p>￥{{item.price * item.shuliang}}</p>
+            <button clear item-right>View</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+      <ion-footer>
+        <ion-toolbar></ion-toolbar>
+      </ion-footer>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'3'">
+      <ion-card-content>
+
+
+        <ion-row>
+          <ion-col>
+            <button primary clear small>
+              <ion-icon name='ios-add-circle-outline'></ion-icon>
+              <div (click)="AddOrders()">添加</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button primary clear small>
+              <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+              <div>审核</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button primary clear small>
+              <ion-icon name='ios-more'></ion-icon>
+              <div>更多</div>
+            </button>
+          </ion-col>
+        </ion-row>
+
+        <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
+        <div class="divider-title">Recent</div>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon name="ios-timer"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Like Title</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Updated Profile Picture</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>A Wine Glass</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="divider-title">October 25, 2016</div>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="ios-timer"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>New Message</h4>
+              <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+              </p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Colors</h4>
+              <p>
+                <ion-icon name="heart" class="color-red"></ion-icon>
+                <ion-icon name="heart" class="color-yellow"></ion-icon>
+                <ion-icon name="heart" class="color-orange"></ion-icon>
+                <ion-icon name="heart" class="color-blue"></ion-icon>
+
+                <ion-icon name="heart" class="color-lightblue"></ion-icon>
+                <ion-icon name="heart" class="color-bluegray"></ion-icon>
+                <ion-icon name="heart" class="color-black"></ion-icon>
+                <ion-icon name="heart" class="color-green"></ion-icon>
+              </p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Title</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'4'">
+      <ion-card-content>
+
+        <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
+        <div class="divider-title">Recent</div>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon name="ios-timer"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Like Title</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Updated Profile Picture</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>A Wine Glass</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="divider-title">October 25, 2016</div>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="ios-timer"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>New Message</h4>
+              <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+              </p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Colors</h4>
+              <p>
+                <ion-icon name="heart" class="color-red"></ion-icon>
+                <ion-icon name="heart" class="color-yellow"></ion-icon>
+                <ion-icon name="heart" class="color-orange"></ion-icon>
+                <ion-icon name="heart" class="color-blue"></ion-icon>
+
+                <ion-icon name="heart" class="color-lightblue"></ion-icon>
+                <ion-icon name="heart" class="color-bluegray"></ion-icon>
+                <ion-icon name="heart" class="color-black"></ion-icon>
+                <ion-icon name="heart" class="color-green"></ion-icon>
+              </p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="ios-timer-outline"></ion-icon>
+            </div>
+            <div class="timeline-item">
+              <h4>Title</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <div class="timeline-stats">
+                <ion-icon name="heart"></ion-icon>
+                2,450
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </ion-card-content>
+    </ion-card>
+
+
+  </div>
+
+  <!--<div style="height:5px;width:100%;background-color: #8f8f8f"></div>-->
+
+
 </ion-content>
