@@ -12,6 +12,10 @@ import { NavController } from 'ionic-angular';
 })
 export class ConsumePage {
 
+  pet: string = "1";
+  stock:string = "stock1";
+  isAndroid: boolean = false;
+
   constructor(private navCtrl: NavController) {
 
   }
