@@ -120,9 +120,10 @@
             </button>
           </ion-col>
         </ion-row>
+
         <ion-list>
           <ion-item>
-            <ion-row>
+            <ion-row style="font-size: 9px;">
               <ion-col width-33>
                 订单号：
               </ion-col>
@@ -132,7 +133,7 @@
             </ion-row>
           </ion-item>
           <ion-item>
-            <ion-row>
+            <ion-row style="font-size: 9px;">
               <ion-col width-33>
                 客户名称：
               </ion-col>
@@ -142,17 +143,17 @@
             </ion-row>
           </ion-item>
           <ion-item>
-            <ion-row>
+            <ion-row style="font-size: 9px;">
               <ion-col width-33>
                 联系人：
               </ion-col>
               <ion-col width-66>
-                {{dingdan.zhiwei + dingdan.lianxiren}}
+                {{dingdan.zhiwei + " " + dingdan.lianxiren}}
               </ion-col>
             </ion-row>
           </ion-item>
           <ion-item>
-            <ion-row>
+            <ion-row style="font-size: 9px;">
               <ion-col width-33>
                 联系电话：
               </ion-col>
@@ -162,7 +163,7 @@
             </ion-row>
           </ion-item>
           <ion-item>
-            <ion-row>
+            <ion-row style="font-size: 9px;">
               <ion-col width-33>
                 客户名称：
               </ion-col>
@@ -172,7 +173,7 @@
             </ion-row>
           </ion-item>
           <ion-item>
-            <ion-row>
+            <ion-row style="font-size: 9px;">
               <ion-col width-33>
                 下单时间：
               </ion-col>
@@ -221,15 +222,34 @@
 
     <ion-card *ngSwitchCase="'2'">
       <ion-card-content>
-        <ion-list *ngFor="let item of dingdan.shangpinList">
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="{{item.imgurl}}">
-            </ion-thumbnail>
-            <h2>{{item.name}}</h2>
-            <p>￥{{item.price * item.shuliang}}</p>
-            <button clear item-right>View</button>
-          </ion-item>
+        <ion-row>
+          <ion-col width-col-50 style="text-align: center">
+            <button primary clear small>
+              <ion-icon name='ios-add-circle'></ion-icon>
+              <div (click)="AddGoods()">商品</div>
+            </button>
+          </ion-col>
+          <ion-col width-col-50 style="text-align: center">
+          </ion-col>
+        </ion-row>
+
+        <ion-list>
+          <ion-item-sliding *ngFor="let item of dingdan.shangpinList">
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="{{item.imgurl}}">
+              </ion-thumbnail>
+              <p style="font-size: 11px;">{{item.name}}</p>
+              <p style="font-size: 9px;">商品描述占位</p>
+              <p style="font-size: 9px;">￥{{item.price * item.shuliang}}</p>
+            </ion-item>
+            <ion-item-options>
+              <button danger (click)="showConfirm(item)">
+                <ion-icon name="md-close"></ion-icon>
+                删除
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
         </ion-list>
       </ion-card-content>
       <ion-footer>
@@ -242,127 +262,95 @@
 
 
         <ion-row>
-          <ion-col>
-            <button primary clear small>
-              <ion-icon name='ios-add-circle-outline'></ion-icon>
-              <div (click)="AddOrders()">添加</div>
-            </button>
+          <ion-col width-60 style="font-size: 9px;">
+            <ion-input type="text" placeholder="评语" style="font-size: 9px;border: 1px solid"></ion-input>
           </ion-col>
-          <ion-col>
+          <ion-col width-20>
             <button primary clear small>
               <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
               <div>审核</div>
             </button>
           </ion-col>
-          <ion-col center text-center>
+          <ion-col width-20>
             <button primary clear small>
-              <ion-icon name='ios-more'></ion-icon>
-              <div>更多</div>
+              <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+              <div>驳回</div>
             </button>
           </ion-col>
         </ion-row>
 
         <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
-        <div class="divider-title">Recent</div>
+        <div class="divider-title">流程列表</div>
         <ul class="timeline">
           <li>
-            <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer"></ion-icon>
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="md-arrow-dropdown-circle"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>Like Title</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <h4>客户已收货</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                签收人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 签收时间：2016/01/01</span>
               </div>
             </div>
           </li>
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>Updated Profile Picture</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <h4>已发货</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                发货单号：1234567890
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 发货时间：2016/01/01</span>
               </div>
             </div>
           </li>
           <li>
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>A Wine Glass</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <h4>已审批</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                审批人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 审批时间：2016/01/01</span>
               </div>
             </div>
           </li>
-        </ul>
-        <div class="divider-title">October 25, 2016</div>
-        <ul class="timeline">
           <li>
-            <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer"></ion-icon>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>New Message</h4>
-              <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-              </p>
+              <h4>已审批2</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                审批人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 审批时间：2016/01/01</span>
               </div>
             </div>
           </li>
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
-            <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>Colors</h4>
-              <p>
-                <ion-icon name="heart" class="color-red"></ion-icon>
-                <ion-icon name="heart" class="color-yellow"></ion-icon>
-                <ion-icon name="heart" class="color-orange"></ion-icon>
-                <ion-icon name="heart" class="color-blue"></ion-icon>
-
-                <ion-icon name="heart" class="color-lightblue"></ion-icon>
-                <ion-icon name="heart" class="color-bluegray"></ion-icon>
-                <ion-icon name="heart" class="color-black"></ion-icon>
-                <ion-icon name="heart" class="color-green"></ion-icon>
-              </p>
+              <h4>订单已生成</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
-            </div>
-            <div class="timeline-item">
-              <h4>Title</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
-              <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                申请人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 申请时间：2016/01/01</span>
               </div>
             </div>
           </li>
@@ -376,106 +364,77 @@
       <ion-card-content>
 
         <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
-        <div class="divider-title">Recent</div>
+        <div class="divider-title">流程列表</div>
         <ul class="timeline">
           <li>
-            <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer"></ion-icon>
+            <div class="timeline-thumb bg-color-red timeline-icon">
+              <ion-icon name="md-arrow-dropdown-circle"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>Like Title</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <h4>客户已收货</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                签收人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 签收时间：2016/01/01</span>
               </div>
             </div>
           </li>
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>Updated Profile Picture</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <h4>已发货</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                发货单号：1234567890
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 发货时间：2016/01/01</span>
               </div>
             </div>
           </li>
           <li>
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>A Wine Glass</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+              <h4>已审批</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                审批人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 审批时间：2016/01/01</span>
               </div>
             </div>
           </li>
-        </ul>
-        <div class="divider-title">October 25, 2016</div>
-        <ul class="timeline">
           <li>
-            <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer"></ion-icon>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>New Message</h4>
-              <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-              </p>
+              <h4>已审批2</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                审批人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 审批时间：2016/01/01</span>
               </div>
             </div>
           </li>
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
-            <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
+            <div class="timeline-thumb bg-color-blue timeline-icon">
+              <ion-icon secondary name="md-checkbox"></ion-icon>
             </div>
             <div class="timeline-item">
-              <h4>Colors</h4>
-              <p>
-                <ion-icon name="heart" class="color-red"></ion-icon>
-                <ion-icon name="heart" class="color-yellow"></ion-icon>
-                <ion-icon name="heart" class="color-orange"></ion-icon>
-                <ion-icon name="heart" class="color-blue"></ion-icon>
-
-                <ion-icon name="heart" class="color-lightblue"></ion-icon>
-                <ion-icon name="heart" class="color-bluegray"></ion-icon>
-                <ion-icon name="heart" class="color-black"></ion-icon>
-                <ion-icon name="heart" class="color-green"></ion-icon>
-              </p>
+              <h4>订单已生成</h4>
+              <p>说明占位</p>
               <div class="timeline-stats">
                 <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline"></ion-icon>
-            </div>
-            <div class="timeline-item">
-              <h4>Title</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
-              <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon>
-                2,450
-                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
+                申请人：王五
+                <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 申请时间：2016/01/01</span>
               </div>
             </div>
           </li>

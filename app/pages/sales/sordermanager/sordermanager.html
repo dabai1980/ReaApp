@@ -11,7 +11,7 @@
   </ion-navbar>
   <ion-row>
     <ion-col primary>
-      <ion-searchbar  class="searchbar-active" (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-searchbar class="searchbar-active" (ionInput)="getItems($event)"></ion-searchbar>
     </ion-col>
   </ion-row>
 </ion-header>
@@ -23,25 +23,25 @@
       订单
     </ion-list-header>
     <ion-item *ngFor="let item of items" (click)="routeOrderDetail(item.id)">
-     <ion-row>
-      <ion-col width-50>
-        <h1>{{item.c}}</h1>
-      </ion-col>
-       <ion-col width-50>
-         <h1>{{item.id}}</h1>
-       </ion-col>
-    </ion-row>
       <ion-row>
         <ion-col width-50>
-          <h7>￥{{item.sum}}</h7>
+          <p style="font-size: 11px;">{{item.c}}</p>
         </ion-col>
         <ion-col width-50>
-          <h7>共{{item.num}}件商品</h7>
+          <p style="font-size: 11px;">{{item.id}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-50>
+          <p style="font-size: 9px;">￥{{item.sum}}</p>
+        </ion-col>
+        <ion-col width-50>
+          <p style="font-size: 9px;">共{{item.num}}件商品</p>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <h7>{{item.dt}}</h7>
+          <p style="font-size: 9px;">{{item.state}}</p>
         </ion-col>
       </ion-row>
     </ion-item>

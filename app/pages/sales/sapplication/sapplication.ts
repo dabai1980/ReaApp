@@ -78,4 +78,26 @@ export class SapplicationPage {
     alert.present();
   }
 
+  showConfirm(item) {
+    let confirm = this.alertCtrl.create({
+      title: '删除' + item.name,
+      message: '确定要删除' + item.name + '吗?点击“确定”继续，点击“取消”放弃删除。',
+      buttons: [
+        {
+          text: '取消',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: '确定',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
 }
