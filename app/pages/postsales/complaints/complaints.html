@@ -15,4 +15,54 @@
 
 <ion-content padding>
 
+
+  <ion-row>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name='ios-add-circle-outline'></ion-icon>
+        <div (click)="rutePlan()">添加</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+        <div>删除</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <button primary clear small>
+        <ion-icon name='ios-more'></ion-icon>
+        <div>更多</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-item>
+      <ion-label primary floating>合同编号</ion-label>
+      <ion-textarea rows="1"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>客户姓名</ion-label>
+      <ion-textarea rows="1"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>客户电话</ion-label>
+      <ion-textarea rows="1"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>客户地址</ion-label>
+      <ion-textarea rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>投诉类型</ion-label>
+      <ion-textarea rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>投诉内容</ion-label>
+      <ion-textarea rows="6"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+
 </ion-content>
