@@ -15,4 +15,55 @@
 
 <ion-content padding>
 
+
+  <ion-row>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name='ios-add-circle-outline'></ion-icon>
+        <div (click)="rutePlan()">添加</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name='ios-checkmark-circle-outline'></ion-icon>
+        <div>删除</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <button primary clear small>
+        <ion-icon name='ios-more'></ion-icon>
+        <div>更多</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-item>
+      <ion-label primary floating>产品编码</ion-label>
+      <ion-textarea rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>产品名称</ion-label>
+      <ion-textarea rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>产品型号</ion-label>
+      <ion-textarea rows="2"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>产品说明</ion-label>
+      <ion-textarea rows="3"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>数量</ion-label>
+      <ion-textarea rows="3"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label primary floating>单位</ion-label>
+      <ion-textarea rows="3"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+
+
 </ion-content>
