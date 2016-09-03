@@ -15,4 +15,229 @@
 
 <ion-content padding>
 
+  <ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+    <ion-segment [(ngModel)]="pet" [attr.light]="isAndroid ? '' : null">
+
+      <ion-segment-button value="1">
+        订单查询
+      </ion-segment-button>
+
+      <ion-segment-button value="2">
+        订单摘要
+      </ion-segment-button>
+
+      <ion-segment-button value="3">
+        订单明细
+      </ion-segment-button>
+
+      <ion-segment-button value="4">
+        商品退货
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="pet">
+
+    <ion-card *ngSwitchCase="'1'">
+      <ion-card-content>
+
+        <ion-list>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                订单号：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.dingdanhao}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                客户名称：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.kehu}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                联系人：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.zhiwei + " " + dingdan.lianxiren}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                联系电话：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.lianxidianhua}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                客户名称：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.kehu}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                下单时间：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.xiadantime}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+
+      </ion-card-content>
+      <ion-footer>
+        <ion-toolbar>
+          <p style="font-size: 9px;">申请人：{{sqr}}</p>
+          <p style="font-size: 9px;">合 计：24567.00元 共 2 件商品</p>
+          <ion-buttons end>
+            <button primary>
+              <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+              保存
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'2'">
+      <ion-card-content>
+
+        <ion-list>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                订单号：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.dingdanhao}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                客户名称：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.kehu}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                联系人：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.zhiwei + " " + dingdan.lianxiren}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                联系电话：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.lianxidianhua}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                客户名称：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.kehu}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item>
+            <ion-row style="font-size: 9px;">
+              <ion-col width-33>
+                下单时间：
+              </ion-col>
+              <ion-col width-66>
+                {{dingdan.xiadantime}}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+
+      </ion-card-content>
+      <ion-footer>
+        <ion-toolbar>
+          <p style="font-size: 9px;">申请人：{{sqr}}</p>
+          <p style="font-size: 9px;">合 计：24567.00元 共 2 件商品</p>
+          <ion-buttons end>
+            <button primary>
+              <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+              保存
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'3'">
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let item of dingdan.shangpinList">
+            <ion-thumbnail item-left>
+              <img src="{{item.imgurl}}">
+            </ion-thumbnail>
+            <p style="font-size: 11px;">{{item.name}}</p>
+            <p style="font-size: 9px;">商品描述占位</p>
+            <p style="font-size: 9px;">￥{{item.price * item.num}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+      <ion-footer>
+        <ion-toolbar></ion-toolbar>
+      </ion-footer>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'4'">
+      <ion-card-content>
+
+        <ion-list>
+          <ion-item *ngFor="let item of dingdan.shangpinList">
+            <ion-thumbnail item-left>
+              <img src="{{item.imgurl}}">
+            </ion-thumbnail>
+            <p style="font-size: 11px;">{{item.name}}</p>
+            <p style="font-size: 9px;">商品描述占位</p>
+            <p style="font-size: 9px;">￥{{item.price * item.num}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+
+      </ion-card-content>
+    </ion-card>
+
+
+  </div>
+
 </ion-content>

@@ -51,6 +51,8 @@ export class SorderdetailPage {
 
   //private item: any = this.items.filter((item)=> { return (item.id == this.ddid);});
   private item: any = {id: '123456', name: '订单订单订单1', sum: 200.00, num: 3, dt: '2016/07/23 09:30:00', c: '客户1'};
+
+
   constructor(private navCtrl: NavController,
                 private params: NavParams) {
     this.ddid = params.data.ddid;
