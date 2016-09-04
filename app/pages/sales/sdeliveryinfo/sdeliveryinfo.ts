@@ -11,6 +11,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'build/pages/sales/sdeliveryinfo/sdeliveryinfo.html',
 })
 export class SdeliveryinfoPage {
+
+  pet: string = "1";
+  stock:string = "stock1";
+  isAndroid: boolean = false;
+  sqr: string = "销售部 张三";
+
   item: any = {id: '123456', name: '订单订单订单1', sum: 200.00, num: 3, dt: '2016/07/23 09:30:00', c: '客户1', dstate:'已发货', ddt: '2016/07/26 04:30:00',
   wuliudanhao: '2394845jd2983u', chengjiewuliu: '顺丰快递'};
 

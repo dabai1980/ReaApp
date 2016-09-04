@@ -19,36 +19,36 @@
 <ion-content padding style="background-color:lightgrey;">
   <ion-list>
     <ion-list-header>
-      <h1>订单</h1>
+      <p style="font-size: 12px;">订单</p>
     </ion-list-header>
     <ion-item *ngFor="let item of items" (click)="routeOrderDetail(item.id)">
       <ion-row>
         <ion-col width-50>
-          <h1>{{item.c}}</h1>
+          <p style="font-size: 11px;">{{item.c}}</p>
         </ion-col>
         <ion-col width-50>
-          <h1>{{item.id}}</h1>
+          <p style="font-size: 11px;">{{item.id}}</p>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col width-50>
-          <h7>￥{{item.sum}}</h7>
+          <p style="font-size: 9px;">￥{{item.sum}}</p>
         </ion-col>
         <ion-col width-50>
-          <h7>共{{item.num}}件商品</h7>
+          <p style="font-size: 9px;">共{{item.num}}件商品</p>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <h7>{{item.dt}}</h7>
+          <p style="font-size: 9px;">{{item.dt}}</p>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col width-40>
-          <h7>{{item.dstate}}</h7>
+          <p style="font-size: 9px;">{{item.dstate}}</p>
         </ion-col>
         <ion-col width-60 style="align-text:center;">
-          <h7>发货时间：{{item.ddt}}</h7>
+          <p style="font-size: 9px;">发货时间：{{item.ddt}}</p>
         </ion-col>
       </ion-row>
     </ion-item>
