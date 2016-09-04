@@ -20,19 +20,19 @@
     <ion-segment [(ngModel)]="pet" [attr.light]="isAndroid ? '' : null">
 
       <ion-segment-button value="1">
-        采购申请
+        采购发票
       </ion-segment-button>
 
       <ion-segment-button value="2">
-        申请说明
+        发票说明
       </ion-segment-button>
 
       <ion-segment-button value="3">
-        申请审批
+        相关定单
       </ion-segment-button>
 
       <ion-segment-button value="4">
-        申请状态
+        定单状态
       </ion-segment-button>
 
     </ion-segment>
@@ -104,7 +104,7 @@
       <ion-footer>
         <ion-toolbar>
           <p style="font-size: 9px;">申请人：销售部 张三</p>
-          <p style="font-size: 9px;">合  计：24567.00元 共 2 件商品</p>
+          <p style="font-size: 9px;">合 计：24567.00元 共 2 件商品</p>
           <ion-buttons end>
             <button primary>
               <ion-icon name="md-checkmark-circle-outline"></ion-icon>
@@ -119,8 +119,9 @@
       <ion-card-content>
         <ion-list>
           <ion-item>
-            <ion-label primary>申请说明</ion-label>
-            <ion-textarea></ion-textarea></ion-item>
+            <ion-label primary floating>申请说明</ion-label>
+            <ion-textarea rows="6"></ion-textarea>
+          </ion-item>
         </ion-list>
       </ion-card-content>
       <ion-footer>
@@ -158,13 +159,14 @@
         <ul class="timeline">
           <li>
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer" ></ion-icon>
+              <ion-icon name="ios-timer"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Like Title</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -172,26 +174,28 @@
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Updated Profile Picture</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
           </li>
           <li>
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>A Wine Glass</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -201,7 +205,7 @@
         <ul class="timeline">
           <li>
             <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer" ></ion-icon>
+              <ion-icon name="ios-timer"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>New Message</h4>
@@ -209,7 +213,8 @@
                 consequat.
               </p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -217,7 +222,7 @@
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
             <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Colors</h4>
@@ -233,20 +238,22 @@
                 <ion-icon name="heart" class="color-green"></ion-icon>
               </p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon>2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
           </li>
           <li>
             <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Title</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -265,13 +272,14 @@
         <ul class="timeline">
           <li>
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer" ></ion-icon>
+              <ion-icon name="ios-timer"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Like Title</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -279,26 +287,28 @@
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Updated Profile Picture</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
           </li>
           <li>
             <div class="timeline-thumb bg-color-blue timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>A Wine Glass</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -308,7 +318,7 @@
         <ul class="timeline">
           <li>
             <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer" ></ion-icon>
+              <ion-icon name="ios-timer"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>New Message</h4>
@@ -316,7 +326,8 @@
                 consequat.
               </p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
@@ -324,7 +335,7 @@
           <li>
             <!--<img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">-->
             <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Colors</h4>
@@ -340,20 +351,22 @@
                 <ion-icon name="heart" class="color-green"></ion-icon>
               </p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon>2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>
           </li>
           <li>
             <div class="timeline-thumb bg-color-red timeline-icon">
-              <ion-icon name="ios-timer-outline" ></ion-icon>
+              <ion-icon name="ios-timer-outline"></ion-icon>
             </div>
             <div class="timeline-item">
               <h4>Title</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
               <div class="timeline-stats">
-                <ion-icon name="heart"></ion-icon> 2,450
+                <ion-icon name="heart"></ion-icon>
+                2,450
                 <span class="pos-absolute-right"><ion-icon name="time"></ion-icon> 2 mins ago</span>
               </div>
             </div>

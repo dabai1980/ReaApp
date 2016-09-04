@@ -20,19 +20,19 @@
     <ion-segment [(ngModel)]="pet" [attr.light]="isAndroid ? '' : null">
 
       <ion-segment-button value="1">
-        采购申请
+        验货单据
       </ion-segment-button>
 
       <ion-segment-button value="2">
-        申请说明
+        验货说明
       </ion-segment-button>
 
       <ion-segment-button value="3">
-        申请审批
+        单据审批
       </ion-segment-button>
 
       <ion-segment-button value="4">
-        申请状态
+        单据状态
       </ion-segment-button>
 
     </ion-segment>
@@ -119,8 +119,8 @@
       <ion-card-content>
         <ion-list>
           <ion-item>
-            <ion-label primary>申请说明</ion-label>
-            <ion-textarea></ion-textarea>
+            <ion-label primary floating>申请说明</ion-label>
+            <ion-textarea rows="6"></ion-textarea>
           </ion-item>
           <ion-item>
             <ion-label floating>申请说明</ion-label>
