@@ -14,7 +14,6 @@ export class SreturngoodsmanagerPage {
 
 
   pet: string = "1";
-  stock:string = "stock1";
   isAndroid: boolean = false;
   sqr: string = "销售部 张三";
 
